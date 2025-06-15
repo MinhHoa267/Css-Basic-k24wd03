@@ -1,0 +1,50 @@
+/* body{
+    margin:  10px;
+}
+/* #product p{
+    color:  orange;
+} áp dụng cho tất cả 
+*/
+/* #product  p{
+    color:  orange;
+} */ 
+/* article.first{
+    color: navy;
+    font-size: 10px;
+    font-weight: bold;
+    font-style: italic;
+} */
+/* article:first-child {
+    color: navy;
+    font-size: 10px;
+    font-weight: bold;
+    font-style: italic;
+} đứa con đầu */
+/* article:last-child {
+    color: navy;
+    font-size: 10px;
+    font-weight: bold;
+    font-style: italic;
+} đứa con cuối cùng */
+/* article:nth-child(odd) {
+    color: navy;
+    font-size: 10px;
+    font-weight: bold;
+    font-style: italic;
+} */
+
+/* article  ::before{
+    content: "....";
+    display: block; /* khi gọi thẻ block thì kích hoạt thẻ div tách .... khỏi dòng chữ */
+/* } */
+a:hover{
+    color: red;
+    text-decoration: none;
+
+}
+a :visited{
+    color: pink;
+}
+a :hover{
+    
+}
