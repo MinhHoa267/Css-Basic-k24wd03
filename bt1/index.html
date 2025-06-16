@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+  <title>National Sales Report</title> 
+</head>
+<body>
+    <div class="container">
+  <h2 class="report-title">National Sales Report</h2> 
+  <table>
+    <thead>
+      <tr>
+        <th>Region</th>
+        <th>Manager</th>
+        <th>Sales</th>
+      </tr>
+    </thead>
+    <tbody id="sales-body">
+    </tbody>
+    <tfoot>
+      <tr class="total">
+        <td colspan="3" style="text-align: right;">Total: $42,500</td>
+      </tr>
+    </tfoot>
+  </table>
+
+  <script>
+    const salesData = [
+      { region: "North", manager: "Alice", sales: 4500 },
+      { region: "South", manager: "Bob", sales: 12000 },
+      { region: "East", manager: "Charlie", sales: 8000 },
+      { region: "West", manager: "Dana", sales: 15000 },
+      { region: "Central", manager: "Eve", sales: 3000 }
+    ];
+
+    const tbody = document.getElementById("sales-body");
+
+    salesData.forEach(({ region, manager, sales }) => {
+      const row = document.createElement("tr");
+
+      if (sales > 10000) {
+        row.setAttribute("data-status", "high");
+      } else if (sales < 5000) {
+        row.setAttribute("data-status", "low");
+      }
+
+      const tdRegion = document.createElement("td");
+      tdRegion.classList.add("region");
+      tdRegion.textContent = region;
+
+      const tdManager = document.createElement("td");
+      tdManager.textContent = manager;
+
+      const tdSales = document.createElement("td");
+      tdSales.classList.add("sales");
+      tdSales.textContent = `$${sales.toLocaleString()}`;
+
+      row.appendChild(tdRegion);
+      row.appendChild(tdManager);
+      row.appendChild(tdSales);
+
+      tbody.appendChild(row);
+    });
+  </script>
+  </div>
+</body>
+</html>

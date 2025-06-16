@@ -1,0 +1,78 @@
+.container {
+  border: 3px solid #040404;
+  padding: 20px;
+  width: auto; /* Kích thước tự điều chỉnh theo nội dung bên trong */
+  text-align: center;
+  border-radius: 8px;
+  background-color: #f4f4f4;
+  display: inline-block; /* Giúp khung chỉ bao quanh nội dung bên trong */
+}
+
+/* lớp điều chỉnh thuộc tính tiêu đề*/
+.report-title {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 24px;
+   text-align: left;
+  margin-bottom: 10px;
+}
+
+/* phong chữ cho bài */
+ body {
+      font-family: sans-serif;
+    }
+
+    table {
+      width: 100%; /* chỉnh độ ngang cho bảng nhỏ bên trong */
+      border-collapse: collapse; /* gộp cái đường viền */
+    }
+    /* chỉnh đậm nhạt và màu cho hàng đầu */
+    thead {
+      background-color: #002b80;
+      color: white;
+      text-transform: uppercase;
+      text-align: center;
+    } 
+    /* tạo khung cho nội dung trong bảng */
+    table, th, td {
+    border: 2px solid #131313;
+    }
+    
+      /* chỉnh màu nền cbo ô sales <5000*/
+    tbody tr:nth-child(odd) {
+      background-color: #f9f9f9;
+    }
+ /* chỉnh màu nền cbo ô sales >10000*/
+    tbody tr:nth-child(even) {
+      background-color: #ffffff;
+    }
+
+    td, th {
+      padding: 5px; /* tạo khoảng cách cho nội dung trong bảng */
+          }
+      /* định dạng cho ô sales căn lề phải */
+    td.sales {
+      text-align: right;
+    }
+    /* định dạng màu chữ ô <5000*/
+    tr[data-status="high"] {
+      background-color: #e6ffe6;
+      color: green;
+      font-weight: bold;
+    }
+    /* định dạng màu chữ ô >10000*/
+    tr[data-status="low"] {
+      background-color: #ffe6e6;
+      color: red;
+      font-style: italic;
+    }
+    /* định dạng màu chữ và màu nền cho ô total*/
+    tr.total {
+      background-color: #002b80;
+      color: white;
+      font-weight: bold;
+    }
+    /* lọc 2 hàng có điểm cao nhất sau đó thêm [Top Sales ] vào */
+    tr[data-status="high"] td.region::before {
+      content: "[Top Sales] ";
+    }
